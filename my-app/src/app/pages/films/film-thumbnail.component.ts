@@ -9,7 +9,7 @@ import { Component, Input } from '@angular/core';
 			<img [src] = "['assets/images/'+film.image]" [alt]="film.name" class = 'poster-size'>
 			<div>Release: {{film.releaseDate}}</div>
 			<div>{{film.classification}}</div>
-			<showtimes></showtimes>
+			<showtimes [filmid]= 'film.id'></showtimes>
 		</div>`,
 	styles : [`
 		.poster-size{height : 300px; width : 200px}`]
