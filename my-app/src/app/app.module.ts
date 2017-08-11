@@ -3,10 +3,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router'
 
 import {AppComponent} from './appcomponent/app.component';
-import { HomepageComponent,
+import {HomepageComponent,
 		AboutPageComponent,
 		FilmsPageComponent,
 		FilmThumbnailComponent,
+		ShowtimesComponent,
 		FilmDetailsComponent } from './pages/pages.index';
 import {HeaderComponent, 
 		NavbarComponent, 
@@ -23,6 +24,7 @@ import {appRoutes} from './routes';
 	AboutPageComponent,
 	FilmsPageComponent,
 	FilmThumbnailComponent,
+	ShowtimesComponent,
 	FilmDetailsComponent,
 	HeaderComponent,
 	NavbarComponent,
