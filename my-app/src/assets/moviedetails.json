@@ -1,30 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
-@Component({
-	
-	template : `
-	<div>
-		<h2>Films</h2>
-		<hr/>
-		<div *ngFor= "let film of films" >
-			<film-thumbnail [film] = "film"></film-thumbnail>
-		</div>
-	</div>`
-	
-})
-
-export class FilmsPageComponent{
-	
-	films: any;
-	
-	ngOnInit(){
-		
-		this.films = movieDetails;
-		
-	}
-	
-}
-const movieDetails=[
+{
+	"movieDetails":[
 					{
 					"id":"0",
 					"name": "High School Musical",
@@ -34,7 +9,7 @@ const movieDetails=[
 					"genre" : ["Comedy", "Drama", "Family"],
 					"actors" : ["Zac Efron", "Vanessa Hudgens", "Ashley Tisdale"],
                     "trailer": "https://www.youtube.com/embed/ukDLkkvZYFk",
-					"releaseDate" : "September 22, 2006",
+					"releaseDate" :"September 22, 2006",
 					"overlayText":"",
 					"description" : "On Easter Eve in 2006, high school juniors Troy Bolton (Zac Efron) and Gabriella Montez (Vanessa Hudgens) meet at a party while both teens are at a ski lodge during winter break. At the party, the two are called upon to sing karaoke together. They find that they have a connection and decide to exchange numbers before going their separate ways."	
 					},
@@ -195,3 +170,5 @@ const movieDetails=[
 					"description" : "Lightning McQueen sets out to prove to a new generation of racers that he's still the best race car in the world."
 					}
        ]
+
+}
