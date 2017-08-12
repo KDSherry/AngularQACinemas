@@ -7,7 +7,9 @@ import { HomepageComponent,
 		AboutPageComponent,
 		FilmsPageComponent,
 		FilmThumbnailComponent,
-		FilmDetailsComponent } from './pages/pages.index';
+		FilmDetailsComponent,
+		ClassificationsPageComponent,
+		ClassificationThumbnailComponent} from './pages/pages.index';
 import {HeaderComponent, 
 		NavbarComponent, 
 		LogoComponent} from './header/header.index';
@@ -24,6 +26,8 @@ import {appRoutes} from './routes';
 	FilmsPageComponent,
 	FilmThumbnailComponent,
 	FilmDetailsComponent,
+	ClassificationsPageComponent,
+	ClassificationThumbnailComponent,
 	HeaderComponent,
 	NavbarComponent,
 	LogoComponent
