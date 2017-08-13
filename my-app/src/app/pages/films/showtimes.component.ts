@@ -4,13 +4,22 @@ import { Component, Input } from '@angular/core';
 	
 	selector: 'showtimes',
 	template : `<div>
-					<h5>Showtimes</h5>
-					<div *ngFor= "let filmtime of filmtimes">
-						<div>
-							{{filmtime.showingTime}}
-						<div>
+					<div class = "showtimeT">
+						<h5 >Showtimes</h5>
 					</div>
-				</div>`
+					<ol class = 'mdl-list mdl-grid'>
+						<li class = 'mdl-list_item mdl-cell' *ngFor= "let filmtime of filmtimes">
+							<div class = "">
+								{{filmtime.showingTime}}
+							</div>
+						</li>
+					</ol>
+				</div>`,
+	styles :[`
+			ol {width : 30em},
+			ol li {float: left; width: 10em},
+			.showtimesT{float:right}
+				`]
 })
 
 export class ShowtimesComponent{
