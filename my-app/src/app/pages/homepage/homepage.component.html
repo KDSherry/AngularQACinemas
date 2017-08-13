@@ -1,9 +1,65 @@
-<div>
-	<h1>
-		Welcome to  QA Cinemas!
-	</h1>
+<div class="homepage">
+    <div class="carousel">
+        <ngx-siema [options]="options" selector="siema">
+            hello
+            <ngx-siema-slide>
+                <img src="../../../assets/images/carousel/interstellar.jpg">
+            </ngx-siema-slide>
+            <ngx-siema-slide>
+                <img src=".././../assets/images/carousel/2001.jpg">
+            </ngx-siema-slide>
+            <ngx-siema-slide>
+                <img src="../../../assets/images/carousel/tdk.jpg">
+            </ngx-siema-slide>
+        </ngx-siema>
+        <button type="button" (click)="prev()">Prev</button>
+        <button type="button" (click)="next()">Next</button>
+    </div>
 
-	<h2>
-		You are on the homepage
-	</h2>
+    <div class="homepage-deals">
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--6-col">
+                <div class="mdl-card mdl-shadow--2dp deal1">
+
+                </div>
+            </div>
+            <div class="mdl-cell mdl-cell--6-col">
+                <div class="mdl-card mdl-shadow--2dp deal2">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="films">
+        <div class="mdl-grid">
+
+            <div class="mdl-cell mdl-cell--3-col">
+                <div class="mdl-card__title">
+                    <img src='../../../assets/images/bd.jpg'>
+                </div>
+                <div class="mdl-card__supporting-text">
+                adsasd
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+
+                </div>
+            </div>
+
+        </div>
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--3-col">
+
+            </div>
+            <div class="mdl-cell mdl-cell--3-col">
+
+            </div>
+            <div class="mdl-cell mdl-cell--3-col">
+
+            </div>
+            <div class="mdl-cell mdl-cell--3-col">
+
+            </div>
+        </div>
+    </div>
 </div>
