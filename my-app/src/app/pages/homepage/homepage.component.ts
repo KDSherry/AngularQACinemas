@@ -41,4 +41,6 @@ export class HomepageComponent implements OnInit{
         this.ngxSiemaService.goTo(1)
             .subscribe((data: any) => console.log(data));
     }
+
+    
 }

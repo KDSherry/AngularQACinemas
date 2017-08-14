@@ -23,4 +23,11 @@
     border: dashed;
     background: url('../../../assets/images/offers/deal-example.jpg') center / cover;
 }
-
+.homepage-filmcard .mdl-card{
+     width: 320px;
+    height: 320px;
+}
+.films .mdl-card img{
+    height: 20em;
+    border: dashed;
+}
