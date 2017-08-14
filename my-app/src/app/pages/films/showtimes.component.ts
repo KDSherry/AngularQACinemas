@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 					<div class = "showtimeT">
 						<h5 >Showtimes</h5>
 					</div>
-					<ol class = 'mdl-list mdl-grid'>
+					<ol class = 'mdl-list mdl-grid ' style ="display:inline-flex">
 						<li class = 'mdl-list_item mdl-cell' *ngFor= "let filmtime of filmtimes">
 							<div class = "">
 								{{filmtime.showingTime}}

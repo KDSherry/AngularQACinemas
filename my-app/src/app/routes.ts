@@ -8,7 +8,7 @@ export const appRoutes : Routes = [
 	{path : 'home', component: HomepageComponent},
 	{path : 'about', component : AboutPageComponent},
 	{path : 'films', component : FilmsPageComponent},
-	{path : 'films/:name', component : FilmDetailsComponent},
+	{path : 'films/:id', component : FilmDetailsComponent},
 	{path : '', redirectTo:'/home', pathMatch: 'full'}
 	
 	
