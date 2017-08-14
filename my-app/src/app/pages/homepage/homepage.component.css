@@ -1,7 +1,8 @@
 .homepage{
     background-color: rgb(168, 242, 255);
     padding-left: 5vw;
-    padding-right: 5vw; 
+    padding-right: 5vw;
+    padding-top: 2em;
 }
 .carousel{
 
@@ -23,11 +24,15 @@
     border: dashed;
     background: url('../../../assets/images/offers/deal-example.jpg') center / cover;
 }
-.homepage-filmcard .mdl-card{
-     width: 320px;
-    height: 320px;
+
+/*films*/
+.films>.mdl-grid{
 }
-.films .mdl-card img{
-    height: 20em;
-    border: dashed;
+.films>.mdl-grid>.mdl-cell{
+    /*border: dotted;*/
+}
+.films>.mdl-grid>.mdl-cell>.mdl-card{
+    margin: 0 auto;
+}
+.homepage-film_card>.mdl-card__title{
 }
