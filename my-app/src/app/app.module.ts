@@ -1,12 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router'
+import { NgxSiemaModule } from 'ngx-siema';
 
 import {AppComponent} from './appcomponent/app.component';
-import { HomepageComponent,
+import {HomepageComponent,
 		AboutPageComponent,
 		FilmsPageComponent,
 		FilmThumbnailComponent,
+		ShowtimesComponent,
 		FilmDetailsComponent } from './pages/pages.index';
 import {HeaderComponent, 
 		NavbarComponent, 
@@ -23,6 +25,7 @@ import {appRoutes} from './routes';
 	AboutPageComponent,
 	FilmsPageComponent,
 	FilmThumbnailComponent,
+	ShowtimesComponent,
 	FilmDetailsComponent,
 	HeaderComponent,
 	NavbarComponent,
@@ -30,7 +33,8 @@ import {appRoutes} from './routes';
   ],
   imports: [
     BrowserModule,
-	RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    NgxSiemaModule.forRoot()
   ],
   providers: [],
   bootstrap: [ AppComponent ]
