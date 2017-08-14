@@ -7,9 +7,8 @@ import {HomepageComponent,
 		AboutPageComponent,
 		FilmsPageComponent,
 		FilmThumbnailComponent,
-		FilmDetailsComponent,
 		ClassificationsPageComponent,
-		ClassificationThumbnailComponent} from './pages/pages.index';
+		ClassificationThumbnailComponent,
 		ShowtimesComponent,
 		FilmDetailsComponent } from './pages/pages.index';
 import {HeaderComponent, 
