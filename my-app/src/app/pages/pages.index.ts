@@ -1,4 +1,5 @@
 export * from './homepage/homepage.component';
+export * from './homepage/film-rows/film-rows.component';
 export * from './about/about-page.component';
 export * from './films/films-page.component';
 export * from './films/film-details/film-details.component';

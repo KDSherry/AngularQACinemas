@@ -5,6 +5,7 @@ import { NgxSiemaModule } from 'ngx-siema';
 
 import {AppComponent} from './appcomponent/app.component';
 import {HomepageComponent,
+        FilmRowsComponent,
 		AboutPageComponent,
 		FilmsPageComponent,
 		FilmThumbnailComponent,
@@ -33,7 +34,8 @@ import {appRoutes} from './routes';
 	ClassificationThumbnailComponent,
 	HeaderComponent,
 	NavbarComponent,
-	LogoComponent
+	LogoComponent,
+	FilmRowsComponent
   ],
   imports: [
     BrowserModule,

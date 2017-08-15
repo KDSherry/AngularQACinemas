@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { NgxSiemaService, NgxSiemaOptions } from 'ngx-siema';
 
 @Component({
-  selector: 'app-homepage',
-  templateUrl: './homepage.component.html'
+    selector: 'app-homepage',
+    templateUrl: './homepage.component.html',
+    styleUrls: ['./homepage.component.css']
 })
 export class HomepageComponent implements OnInit{
     films: Array<any> = [];
@@ -11,14 +12,17 @@ export class HomepageComponent implements OnInit{
     movRow2: Array<string> = [];
 
     constructor(private ngxSiemaService: NgxSiemaService){
+    }
+
+    ngOnInit(){
         this.films = movieDetails;
         console.log(this.films);
     }
 
-    ngOnInit(){
+    //Generating the film rows. 4 films per row. 2 rows.
+    
 
-    }
-
+    //Carousel stuff below
     options: NgxSiemaOptions = {
         selector: '.siema',
     };
