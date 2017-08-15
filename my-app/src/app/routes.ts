@@ -9,8 +9,6 @@ export const appRoutes : Routes = [
 	{path : 'about', component : AboutPageComponent},
 	{path : 'films', component : FilmsPageComponent},
 	{path : 'classifications', component : ClassificationsPageComponent},
-	{path : 'films/:title', component : FilmDetailsComponent},
-	{path : 'films/:name', component : FilmDetailsComponent},
 	{path : 'films/:id', component : FilmDetailsComponent},
 	{path : '', redirectTo:'/home', pathMatch: 'full'}
 	
