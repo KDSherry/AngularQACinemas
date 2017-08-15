@@ -4,6 +4,8 @@ import { Component, OnInit } from '@angular/core';
 	
 	template : `
 	<div>
+		
+		
 		<h2>Films</h2>
 		<hr/>
 		<div *ngFor= "let film of films" >

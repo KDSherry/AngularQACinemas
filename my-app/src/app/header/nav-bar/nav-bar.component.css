@@ -1,0 +1,22 @@
+	
+	a.mdl-js-ripple-effect {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      position: relative;
+    }
+    
+    a:visited {
+      color: green;
+    }
+    
+    .selected .mdl-ripple {
+      width: 0;
+      opacity: 0.3;
+    }
+	a:focus {
+    color: blue;
+    background-color: #cf5c3f;
+}

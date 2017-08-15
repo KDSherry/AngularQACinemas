@@ -3,7 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
 	template : `
-	
 	<div>
 		<h2>
 			{{film.name}}
