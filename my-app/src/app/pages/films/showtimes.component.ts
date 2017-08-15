@@ -3,15 +3,15 @@ import { Component, Input } from '@angular/core';
 @Component({
 	
 	selector: 'showtimes',
-	template : `<div>
+	template : `<div *ngIf = filmtimes[0]>
 					<div class = "showtimeT">
-						<h5 >Showtimes</h5>
+						<h5 style ="border-bottom: solid black 1px;">Showtimes</h5>
 					</div>
 					<ol class = 'mdl-list mdl-grid ' style ="display:inline-flex">
 						<li class = 'mdl-list_item mdl-cell' *ngFor= "let filmtime of filmtimes">
-							<div class = "">
+							<button class = "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect  mdl-button--colored">
 								{{filmtime.showingTime}}
-							</div>
+							</button>
 						</li>
 					</ol>
 				</div>`,
