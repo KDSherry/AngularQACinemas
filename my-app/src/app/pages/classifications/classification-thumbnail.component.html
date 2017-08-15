@@ -1,0 +1,14 @@
+<div class='mdl-grid mdl-grid--no-spacing' style ='box-shadow: 5px 5px 20px black;'>
+    <div class='mdl-cell mdl-cell--4-col-desktop' align='left'>
+        <img [src] = "['assets/images/classifications/'+classification.image]" 
+        [alt]="classification.class"
+        style = "height: 170px;
+                position: relative;
+                margin: 16px"/>
+    </div>
+    <div  style = "margin: 20px 0 0 0" class='mdl-card mdl-cell--8-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone' align='left'>
+        <h4><strong style = "margin: 0 0 0 50px">{{classification.name}}</strong></h4>
+        <p style = "margin: 20px 50px">{{classification.description}}</p>
+    </div>
+</div>
+<br/>

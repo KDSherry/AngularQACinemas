@@ -3,14 +3,14 @@ import { Component, OnInit } from '@angular/core';
 @Component({
 	
 	template : `
-	<div>
-		<h2>Classifications</h2>
-		<hr/>
-		<h4>
-			Below is a brief guide to film classifications. 
+	<div class = 'mdl-card__supporting-text'>
+		<strong>
+			Below is a brief guide to film classifications used at our cinemas. 
 			For further information, please visit the 
 			<a href = "http://www.bbfc.co.uk/what-classification" target = "_blank">BBFC website</a>.
-		</h4>
+		</strong>
+		<br/>
+		<br/>
 		<div *ngFor = "let classification of classifications">
 			<classification-thumbnail 
 			[classification] = "classification">
@@ -50,7 +50,7 @@ const allClassifications = [
 		"class" : "12A",
 		"name" : "12A",
 		"image" : "12A.png",
-		"description" : "Generally unsuitable for views under the age of 12 years. However, children under the age of 12 may view if accompanied by a responsible adult."
+		"description" : "Generally unsuitable for viewers under the age of 12 years. However, children under the age of 12 may view only if accompanied by a responsible adult."
 	},
 	
 	{
