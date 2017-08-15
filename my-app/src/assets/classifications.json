@@ -1,0 +1,38 @@
+{
+	"classifications" :[
+						{
+							"id" : "0",
+							"class" : "U",
+							"image" : "u.png",
+							"description" : "u description"
+						},
+						
+						{
+							"id" : "1",
+							"class" : "PG",
+							"image" : "pg.png",
+							"description" : "pg description"
+						},
+						
+						{
+							"id" : "2",
+							"class" : "12A",
+							"image" : "12A.png",
+							"description" : "12a description"
+						},
+						
+						{
+							"id" : "3",
+							"class" : "15",
+							"image" : "15.png",
+							"description" : "15 description"
+						},
+						
+						{
+							"id" : "4",
+							"class" : "18",
+							"image" : "18.png",
+							"description" : "18 description"
+						},
+						]
+}
