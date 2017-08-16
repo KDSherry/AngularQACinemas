@@ -1,9 +1,9 @@
 .mdl-grid{
     display: inline-flex;
-    height: 35em;
+    height: 30em;
 }
 .mdl-cell{
-    width: 15em;
+    width: 14.5em;
 }
 .mdl-cell>.mdl-card{
     width: 100%;
@@ -18,10 +18,10 @@
     font-size: 14px;
 }
 .mdl-card__actions{
-    height: auto;
-    display: inline-block;
+
 }
 .mdl-card__actions a{
+
 }
 /*
 .mdl-grid>.mdl-cell{

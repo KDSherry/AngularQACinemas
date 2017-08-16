@@ -3,7 +3,6 @@
 
         <div *ngFor="let film of filmsByDate; let i=index">
             <div *ngIf="i>=(row*4) && i<=(row*4)+3">
-                    {{i}}
                 <div class="mdl-cell mdl-cell--3-col">
                     <div class="mdl-card mdl-shadow--4dp homepage-film_card">
                         <div class= "mdl-card__title" [ngStyle]="{'background-image': 'url('+'../../../assets/images/'+film.image+')', 'background-repeat':'no-repeat', 'background-position':'center', 'background-size':'contain'}">
