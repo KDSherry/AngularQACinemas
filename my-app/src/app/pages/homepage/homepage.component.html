@@ -32,8 +32,9 @@
     </div>
 
     <div class="films">
-        <film-rows [row]="1"></film-rows>
-        <film-rows [row]="2"></film-rows>
+        <film-rows [row]="0" [filmsByDate]="filmsByDate"></film-rows>
+        <p>row 2</p>
+        <film-rows [row]="1" [filmsByDate]="filmsByDate"></film-rows>
         <div class="mdl-grid">
 
             <div class="mdl-cell mdl-cell--3-col">

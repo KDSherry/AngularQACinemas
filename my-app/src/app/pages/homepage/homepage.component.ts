@@ -8,19 +8,37 @@ import { NgxSiemaService, NgxSiemaOptions } from 'ngx-siema';
 })
 export class HomepageComponent implements OnInit{
     films: Array<any> = [];
-    movRow1: Array<string> = [];
-    movRow2: Array<string> = [];
+    filmsByDate: Array<any> = [];
 
     constructor(private ngxSiemaService: NgxSiemaService){
     }
 
     ngOnInit(){
         this.films = movieDetails;
-        console.log(this.films);
+        this.getMoviesByRelease();
+        console.log(this.filmsByDate);
     }
 
     //Generating the film rows. 4 films per row. 2 rows.
-    
+
+    //This will be in the flux store later.Right now just need to set filmsByDate
+    getMoviesByRelease(){
+        let sortArray = this.films.slice();
+        for(let i=0; i<sortArray.length-1; i++){
+            for(let j=i+1; j<sortArray.length; j++){
+                let a = new Date(sortArray[i].releaseDate);
+                let b = new Date(sortArray[j].releaseDate);
+                if(a>b){
+                    let tempObj = sortArray[i];
+                    sortArray[i] = sortArray[j]
+                    sortArray[j] = tempObj;
+                }
+            }
+        }
+        sortArray.reverse();
+        this.filmsByDate = sortArray;
+        //return this.filmsByDate;
+    }
 
     //Carousel stuff below
     options: NgxSiemaOptions = {
