@@ -1,26 +1,27 @@
+<div class="filmrow">
+    <div class="mdl-grid">
 
-<div class="mdl-grid">
+        <div *ngFor="let film of filmsByDate; let i=index">
+            <div *ngIf="i>=(row*4) && i<=(row*4)+3">
+                    {{i}}
+                <div class="mdl-cell mdl-cell--3-col">
+                    <div class="mdl-card mdl-shadow--4dp homepage-film_card">
+                        <div class= "mdl-card__title" [ngStyle]="{'background-image': 'url('+'../../../assets/images/'+film.image+')', 'background-repeat':'no-repeat', 'background-position':'center', 'background-size':'contain'}">
 
-    <div *ngFor="let film of filmsByDate; let i=index">
-        <div *ngIf="i>=(row*4) && i<=(row*4)+3">
-
-            <div class="mdl-cell mdl-cell--3-col">
-                <div class="mdl-card mdl-shadow--4dp homepage-film_card" [ngStyle]="{'width':'15em'}">
-                    <div class= "mdl-card__title" [ngStyle]="{'background-image': 'url('+'../../../assets/images/'+film.image+')', 'background-repeat':'no-repeat', 'height':'22.5em','background-size':'contain'}">
-
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            {{film.name}}
+                        </div>
+                        <div class="mdl-card__actions mdl-card--border">
+                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple effect" [routerLink]="['/films', film.id]">
+                                Book
+                            </a>
+                        </div>
                     </div>
-                    <div class="mdl-card__supporting-text">
-                        {{film.name}}
-                    </div>
-                    <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple effect" [routerLink]="['/films', film.id]">
-                            Book
-                        </a>
-                    </div>
+
                 </div>
-
             </div>
         </div>
-    </div>
 
+    </div>
 </div>

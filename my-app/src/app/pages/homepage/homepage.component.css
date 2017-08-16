@@ -26,13 +26,11 @@
 }
 
 /*films*/
-.films>.mdl-grid{
-}
-.films>.mdl-grid>.mdl-cell{
-    /*border: dotted;*/
-}
-.films>.mdl-grid>.mdl-cell>.mdl-card{
+.films{
+    text-align: center;
     margin: 0 auto;
 }
-.homepage-film_card>.mdl-card__title{
+.films>.mdl-grid{
+    margin: 0 auto;
+    border: dashed;
 }
