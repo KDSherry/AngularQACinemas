@@ -1,0 +1,6 @@
+.mdl-grid>.mdl-cell{
+    /*border: dotted;*/
+}
+.mdl-grid>.mdl-cell>.mdl-card{
+    margin: 0 auto;
+}
