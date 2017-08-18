@@ -1,0 +1,61 @@
+<div class = '' >
+	<div >
+		<h2>Your Showing</h2>
+		<hr/>
+		<section class='section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp'  style ='box-shadow: 5px 5px 20px black; display: inline-flex '>
+			<div  style='margin: 20px;' >
+				<img [src]="['assets/images/'+filminfo.image]" [alt]="filminfo.name" style="max-width: 400px">
+			</div>
+			<div class=''  style='margin: 20px;' >
+				<h3 align = 'right'>
+					{{filminfo.name}}
+				</h3>
+				<h3 align= 'right'>
+					{{showtime.showingTime}}
+				</h3>
+				<h3 align= 'right'>
+					{{showtime.showingDate}}
+				</h3>
+				<h3 align= 'right'>
+					{{showtime.screenType}}
+				</h3>
+
+				
+			</div>
+		</section>
+		<div >
+		  <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" (click) = 'removeAdult()'>
+				<i class="material-icons">remove
+				</i>
+		  </button>
+		  <div class="mdl-textfield mdl-js-textfield">
+
+			<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+			<label class="mdl-textfield__label" for="sample2">Adults : {{adultTicket}}</label>
+			<span class="mdl-textfield__error">Input is not a number!</span>
+
+		  </div>
+			<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" (click)= "addAdult()">
+				<i class="material-icons">add</i>
+			</button>
+		</div>
+	<br />
+	<div>
+		  <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" (click)="removeChild()">
+		  <i class="material-icons">remove</i>
+		</button>
+		  <div class="mdl-textfield mdl-js-textfield">
+
+			<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+			<label class="mdl-textfield__label" for="sample2">Children : {{childTicket}}</label>
+			<span class="mdl-textfield__error">Input is not a number!</span>
+
+		  </div>
+			<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" (click)="addChild()">
+		  <i class="material-icons">add</i>
+		</button>
+	</div>
+	</div>
+	<book-seats>
+	</book-seats>
+</div>

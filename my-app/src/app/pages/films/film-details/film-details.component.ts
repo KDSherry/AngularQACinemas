@@ -1,38 +1,54 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
 	template : `
-	<div>
-		<h2>
-			{{film.name}}
-		</h2>
+	<div style = "width : 90%">
+		<div style="text-align: right; font-style: italic">
+			<h2>
+				{{film.name}}
+			</h2>
+		</div>
+		<hr/>
+		<div style="display:inline-block; text-align: left">
+			<div>
+				<iframe style ="margin-right : 30px; float: left; width: 640px; height: 390px;" [src] = "trustedUrl">
+				</iframe>
+			</div>
+			
+			<div style="text-align : right; color: rgb(63,81,181); font-size : 20px; font-style: italic; margin-bottom: 10px">
+				{{film.genre.join(', ')}}
+			</div>
+			<p style = "">
+				{{film.description}}
+			</p>
+			<div>
+				Director : {{film.director}}
+			</div>
+			<div>
+				Starring : {{film.actors.join(', ')}}
+			</div>
+			<div>
+				{{film.releaseDate}}
+			</div>
+			
+			<div>
+				{{film.classification}}
+			</div>
+			
+		</div>
+		<div style = "font-style: italic; margin : 20px">
+			<showtimes [filmid]= 'film.id'></showtimes>
+		</div>
 		
-		<div>
-			{{film.description}}
-		</div>
-		<div>
-			Director : {{film.director}}
-		</div>
-		<div>
-			Starring : {{film.actors.join(', ')}}
-		</div>
-		<div>
-			{{film.releaseDate}}
-		</div>
-		<div>
-			<img [src] = "['assets/images/'+film.image]" [alt]="film.name" style ="width : 60%; height : 60%">
-		</div>
-		<div>
-			{{film.trailer}}
-		<div>
 	</div>`
 })
 
 export class FilmDetailsComponent{
 	film : any;
-	
-	constructor (private route: ActivatedRoute){
+	trustedUrl;
+	constructor (private route: ActivatedRoute, private sanitizer: DomSanitizer){
 		
 	}
 	
@@ -42,6 +58,8 @@ export class FilmDetailsComponent{
 				this.film = movie;
 			}	
 		});
+		this.trustedUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.film.trailer);
+		
 	}
 }
 const movieDetails=[
