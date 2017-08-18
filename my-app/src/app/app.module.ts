@@ -12,7 +12,9 @@ import {HomepageComponent,
 		ClassificationsPageComponent,
 		ClassificationThumbnailComponent,
 		ShowtimesComponent,
-		FilmDetailsComponent } from './pages/pages.index';
+		FilmDetailsComponent,
+		BookingPageComponent,
+		BookSeatsComponent} from './pages/pages.index';
 import {HeaderComponent, 
 		NavbarComponent, 
 		LogoComponent} from './header/header.index';
@@ -35,7 +37,9 @@ import {appRoutes} from './routes';
 	HeaderComponent,
 	NavbarComponent,
 	LogoComponent,
-	FilmRowsComponent
+	FilmRowsComponent,
+	BookingPageComponent,
+	BookSeatsComponent,
   ],
   imports: [
     BrowserModule,
