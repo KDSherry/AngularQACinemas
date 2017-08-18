@@ -9,7 +9,7 @@
       "outDir": "dist",
       "assets": [
         "assets",
-        "src/app/assets/images/logos/favicon.png"
+        "favicon.png"
       ],
       "index": "index.html",
       "main": "main.ts",

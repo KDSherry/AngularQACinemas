@@ -15,7 +15,8 @@ import {HomepageComponent,
 		FilmDetailsComponent } from './pages/pages.index';
 import {HeaderComponent, 
 		NavbarComponent, 
-		LogoComponent} from './header/header.index';
+		LogoComponent,
+		LocationMenu} from './header/header.index';
 
 
 import {appRoutes} from './routes';
@@ -23,7 +24,7 @@ import {appRoutes} from './routes';
 
 @NgModule({
   declarations: [
-    AppComponent,
+  AppComponent,
 	HomepageComponent,
 	AboutPageComponent,
 	FilmsPageComponent,
@@ -35,6 +36,7 @@ import {appRoutes} from './routes';
 	HeaderComponent,
 	NavbarComponent,
 	LogoComponent,
+	LocationMenu,
 	FilmRowsComponent
   ],
   imports: [

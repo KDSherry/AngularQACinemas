@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LocationMenu } from '../location/location-menu.component';
 
 @Component({
 	selector : 'nav-bar',
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
 
 })
 
-export class NavbarComponent{}
+export class NavbarComponent{
+	
+}
