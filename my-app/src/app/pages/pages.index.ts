@@ -9,3 +9,7 @@ export * from './classifications/classification-thumbnail.component';
 export * from './films/showtimes.component';
 export * from './booking/booking-page.component';
 export * from './booking/book-seats.component';
+export * from './register/register.component';
+export * from './login/login.component';
+export * from './dashboard/dashboard.component';
+export * from './profile/profile.component';

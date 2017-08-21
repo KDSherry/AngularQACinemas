@@ -9,6 +9,7 @@ import { NgxSiemaService, NgxSiemaOptions } from 'ngx-siema';
 export class HomepageComponent implements OnInit{
     films: Array<any> = [];
     filmsByDate: Array<any> = [];
+    paypal: any;
 
     constructor(private ngxSiemaService: NgxSiemaService){
     }
@@ -39,6 +40,7 @@ export class HomepageComponent implements OnInit{
         this.filmsByDate = sortArray;
         //return this.filmsByDate;
     }
+
 
     //Carousel stuff below
     options: NgxSiemaOptions = {
