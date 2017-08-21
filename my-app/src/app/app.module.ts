@@ -18,7 +18,8 @@ import {HomepageComponent,
 import {HeaderComponent, 
 		NavbarComponent, 
 		LogoComponent,
-		LocationMenu} from './header/header.index';
+		LocationMenu,
+		LocationThumbnailComponent} from './header/header.index';
 
 
 import {appRoutes} from './routes';
@@ -39,6 +40,7 @@ import {appRoutes} from './routes';
 	NavbarComponent,
 	LogoComponent,
 	LocationMenu,
+	LocationThumbnailComponent,
 	FilmRowsComponent,
 	BookingPageComponent,
 	BookSeatsComponent,

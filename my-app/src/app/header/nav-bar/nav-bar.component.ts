@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { LocationMenu } from '../location/location-menu.component';
 
 @Component({
@@ -9,4 +9,11 @@ import { LocationMenu } from '../location/location-menu.component';
 
 export class NavbarComponent{
 	
+	showMenu: boolean = false;
+	
+	toggleMenu(): void {
+		console.log(this.showMenu);
+		this.showMenu = !this.showMenu;
+		console.log(this.showMenu);
+	}
 }
