@@ -1,8 +1,7 @@
-{
-	"movieDetails":[
+[
 					{
 					"id":"0",
-					"name": "High School Musical",
+					"name": "High School Musical Test",
 					"image" : "hsm.jpg",
 					"classification": "U",
 					"director":"Kenny Ortega",
@@ -168,7 +167,18 @@
                     "trailer": "https://www.youtube.com/embed/ZuaseSovWDY",
 					"overlayText":"x",
 					"description" : "Lightning McQueen sets out to prove to a new generation of racers that he's still the best race car in the world."
-					}
+					},
+					{
+						"id":"12",
+						"name": "The Dark Tower",
+						"image" : "c3.jpg",
+						"classification": "U",
+						"genre" : ["Animation", "Adventure", "Comedy" ],
+						"actors" : ["Owen Wilson", "Cristela Alonzo", "Chris Cooper"],
+						"director": "Brian Fee",
+						"releaseDate" :"July 14, 2017",
+						"trailer": "https://www.youtube.com/embed/ZuaseSovWDY",
+						"overlayText":"x",
+						"description" : "Dark Tower Test."
+						}
        ]
-
-}

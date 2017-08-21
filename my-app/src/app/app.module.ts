@@ -1,7 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router'
+import { HttpClientModule } from '@angular/common/http';
+
+
 import { NgxSiemaModule } from 'ngx-siema';
+
 
 import {AppComponent} from './appcomponent/app.component';
 import {HomepageComponent,
@@ -38,7 +42,8 @@ import {appRoutes} from './routes';
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    NgxSiemaModule.forRoot()
+		NgxSiemaModule.forRoot(),
+		HttpClientModule
   ],
   providers: [],
   bootstrap: [ AppComponent ]

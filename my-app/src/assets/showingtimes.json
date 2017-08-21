@@ -1,5 +1,4 @@
-{
-	"showingTimes" :[
+[
 					 {
 						"movieID" : "0",
 						"cinemaID" : "0",
@@ -205,5 +204,4 @@
 						"cinemaID" : "3",
 						"showingTime" : "23:30"
 					 }
-					 ]
-}
+]
