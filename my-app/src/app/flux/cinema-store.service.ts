@@ -66,9 +66,13 @@ export class CinemaStore {
             }]);
 
     showingSubject = new BehaviorSubject<IShowing[]>([{
-        "movieID" : "0",
-        "cinemaID" : "Awaiting Data",
-        "showingTime" : "Awaiting Data",
+        "id" : "0",
+        "movieID" : "",
+        "cinemaID" : "",
+        "showingTime" : "",
+        "showingDate" : "",
+        "screenType" : "",
+        "seatsRemaining" : 0
             }]);
 
     
