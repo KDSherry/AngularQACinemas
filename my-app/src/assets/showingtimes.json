@@ -1,5 +1,4 @@
-{
-	"showingTimes" :[
+[
 					{
 						"id" : "0",
 						"movieID" : "0",
@@ -370,5 +369,4 @@
 						"screenType" : "3D",
 						"seatsRemaining" :120,
 					 }
-					 ]
-}
+]

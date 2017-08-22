@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router'
 import { NgxSiemaModule } from 'ngx-siema';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import {AppComponent} from './appcomponent/app.component';
 import {HomepageComponent,
@@ -70,7 +71,8 @@ import {appRoutes} from './routes';
     NgxSiemaModule.forRoot(),
     FormsModule,
     HttpModule,
-    FlashMessagesModule
+	FlashMessagesModule,
+	HttpClientModule
   ],
   providers: [ValidateService, AuthService, AuthGuard],
   bootstrap: [ AppComponent ]

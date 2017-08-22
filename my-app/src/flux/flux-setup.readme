@@ -1,0 +1,23 @@
+NOTE: EDITED JSON FILES - previously they were storing data as an array within a variable/attribute name.
+                        in order to work correctly with interfaces, dropped the overall variable/attribute name, and they are now just stored as an array of objects.
+
+
+CinemaStore and CinemaActions created as services.
+Services defined as providers in app.component.ts
+
+No dispatcher as only one store being used (plus I don't know how to make an effective one)
+
+Brief summary of how it works:
+
+Works on the principles of observerables and observers.
+
+Store loads data from a HTTP request (currently pointing towards json files, but can be changed to api address when we have mongo, should be easy to do)
+
+Store then creates BehaviourSubjects as the observables for the store data, and defines methods to return references to these.
+Components observe/subscribe to the BehaviourSubjects, so they update whenever new information is passed to a BehaviourSubject.
+
+When an action needs to be performed on the data, call an action from the CinemaAction service, this then passes an action "payload" to the store.
+That will then update the data, and the store will pass that data to the BehaviourSubject, which will then filter it back through to the subscription set up in components.
+
+
+One current fault, I'm not unsubscribing from any of the observables, so there is technically a memory leak, but should be easy to sort out.
