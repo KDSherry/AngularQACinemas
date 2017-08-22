@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'location-menu',
@@ -8,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class LocationMenu{
 
     locations: any;
+    @Output() exitClicked: EventEmitter<string> = new EventEmitter;
 
     ngOnInit(){
         this.locations = allLocations;
+    }
+
+    onClick(){
+        this.exitClicked.emit('exit');
     }
 }
 

@@ -27,7 +27,7 @@ import {HeaderComponent,
 		LogoComponent,
 		Location,
 		LocationMenu,
-		LocationThumbnailComponent, LogoComponent} from './header/header.index';
+		LocationThumbnailComponent} from './header/header.index';
 import {QuickBookBarComponent} from './pages/homepage/quickbookbar/quick-book-bar.component'
 
 	
@@ -56,14 +56,11 @@ import {appRoutes} from './routes';
 	HeaderComponent,
 	NavbarComponent,
 	LogoComponent,
-<<<<<<< HEAD
 	Location,
 	LocationMenu,
 	LocationThumbnailComponent,
-=======
 	QuickBookBarComponent,
 	AmenityBoxComponent,
->>>>>>> 84c20463980cbb8e6bf9f700e0b9c3cc19aefe37
 	FilmRowsComponent,
 	BookingPageComponent,
 	BookSeatsComponent,
