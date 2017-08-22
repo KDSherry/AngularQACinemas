@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxSiemaService, NgxSiemaOptions } from 'ngx-siema';
 
+import { CinemaStore } from "../../flux/cinema-store.service";
+import { IMovie } from "../../flux/movie";
+import { CinemaActions } from "../../flux/cinema-actions.service";
+import { Observable } from 'rxjs/Observable';
+
 @Component({
     selector: 'app-homepage',
     templateUrl: './homepage.component.html',
@@ -11,13 +16,45 @@ export class HomepageComponent implements OnInit{
     filmsByDate: Array<any> = [];
     paypal: any;
 
-    constructor(private ngxSiemaService: NgxSiemaService){
+    fluxMovies: IMovie[] = [];
+
+    constructor(private ngxSiemaService: NgxSiemaService, private _cinemaStore: CinemaStore, private _cinemaActions: CinemaActions){
     }
 
     ngOnInit(){
+        /*
         this.films = movieDetails;
         this.getMoviesByRelease();
+        console.log('Films hardcoded:');
         console.log(this.filmsByDate);
+        */
+
+                //bunch of testing code
+                console.log("Service Check 2");
+                console.log("Search results will not be correct on initial load. Navigate to about page and back to home for it to be correct");
+        
+                //subscribing to the BehaviourSubject for movies
+                //currently setting this.films to full list of movies for displaying
+                //using this.fluxMovies for testing purposes, console output from homepage should show working test results
+        
+                //NOTE - The search results in console will not work on initial load, due to the same async issues we had when loading data from mongo in react
+                //however, the information on the page is updating correctly once it's loaded from http request (json or mongo) as obserables will update correctly and cause page to render with correct data
+                //to view the search results working correctly in console, navigate to about page and then back to homepage, at which point the store will be correctly populated and work correctly
+
+                this._cinemaStore.getMovies().subscribe(results => {this.films = results; this.getMoviesByRelease();},error=> console.log(error));
+                this._cinemaStore.getMovieSearch().subscribe(results => {this.fluxMovies = results},error=> console.log(error));
+                console.log("Service Check 3");
+                console.log(this.fluxMovies);
+                this._cinemaActions.filterMoviesBySearch("Texas");
+                console.log("Service Check 4");
+                console.log(this.fluxMovies);
+                this._cinemaActions.filterMoviesBySearch("Battle");
+                console.log("Service Check 5");
+                console.log(this.fluxMovies);
+                this._cinemaActions.filterMoviesBySearch("");
+                console.log("Service Check 6");
+                console.log(this.fluxMovies);
+
     }
 
     //Generating the film rows. 4 films per row. 2 rows.

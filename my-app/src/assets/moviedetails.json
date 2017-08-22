@@ -1,5 +1,4 @@
-{
-	"movieDetails":[
+[
 					{
 					"id":"0",
 					"name": "High School Musical",
@@ -145,7 +144,7 @@
 					
 					{
 					"id":"10",
-					"name": "Dunkirk",
+					"name": "Dunkirk Test",
 					"image" : "dnk.jpg",
 					"classification": "12A",
 					"genre" : ["Action", "Drama", "History"],
@@ -169,6 +168,5 @@
 					"overlayText":"x",
 					"description" : "Lightning McQueen sets out to prove to a new generation of racers that he's still the best race car in the world."
 					}
-       ]
+]
 
-}
