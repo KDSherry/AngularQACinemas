@@ -11,11 +11,12 @@ import {HomepageComponent,
 		ClassificationsPageComponent,
 		ClassificationThumbnailComponent,
 		ShowtimesComponent,
+		AmenityBoxComponent,
 		FilmDetailsComponent } from './pages/pages.index';
 import {HeaderComponent, 
 		NavbarComponent, 
 		LogoComponent} from './header/header.index';
-
+import {QuickBookBarComponent} from './pages/homepage/quickbookbar/quick-book-bar.component'
 
 import {appRoutes} from './routes';
 
@@ -33,7 +34,9 @@ import {appRoutes} from './routes';
 	ClassificationThumbnailComponent,
 	HeaderComponent,
 	NavbarComponent,
-	LogoComponent
+	LogoComponent,
+	QuickBookBarComponent,
+	AmenityBoxComponent
   ],
   imports: [
     BrowserModule,
