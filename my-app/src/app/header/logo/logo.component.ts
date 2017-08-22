@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
 	
 	selector : 'logo',
-	template : ``
+	templateUrl : '../../../assets/images/logos/QALogo6.png'
 
 })
 
