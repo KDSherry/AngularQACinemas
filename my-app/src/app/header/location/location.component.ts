@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'location',
-    template:  `<a class = 'mdl-layout__tab mdl-js-button mdl-js-ripple-effect' [routerLink] = "['/films']" (click) = 'toggleMenu()'>Location</a>
+    template:  `<a class = 'mdl-layout__tab mdl-js-button mdl-js-ripple-effect' (click) = 'toggleMenu()'>Location</a>
 	            <location-menu *ngIf = 'showMenu' (exitClicked)='onExitClicked($event)'></location-menu>`
 })
 

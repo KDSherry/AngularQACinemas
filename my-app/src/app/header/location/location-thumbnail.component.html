@@ -1,9 +1,10 @@
-<a class = "mdl-grid"  style =    'box-shadow: 1px 1px 5px black; 
+<a style =    'box-shadow: 1px 1px 5px black; 
                                     margin: 5px;
-                                    display: block'>
-    <img class = "mdl-cell mdl-cell--12-col" [src] = "['assets/images/locations/'+location.image]" 
+                                    display: grid;
+                                    width: fit-content'>
+    <img [src] = "['assets/images/locations/'+location.image]" 
     [alt]="location.location"
     style = "margin: 5px; width: 100px; height: 100px">
-    <div class = "mdl-cell mdl-cell--12-col" style = "color : #000" >{{location.location}}</div>
+    <button class = "mdl-js-button mdl-js-ripple-effect" style = "color : #000" >{{location.location}}</button>
    
 </a>
