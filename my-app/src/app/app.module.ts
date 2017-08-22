@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router'
 import { NgxSiemaModule } from 'ngx-siema';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import {AppComponent} from './appcomponent/app.component';
 import {HomepageComponent,
@@ -12,15 +14,29 @@ import {HomepageComponent,
 		ClassificationsPageComponent,
 		ClassificationThumbnailComponent,
 		ShowtimesComponent,
+		AmenityBoxComponent,
 		FilmDetailsComponent,
 		BookingPageComponent,
-		BookSeatsComponent} from './pages/pages.index';
+		BookSeatsComponent,
+		RegisterComponent,
+		LoginComponent,
+		ProfileComponent,
+		DashboardComponent } from './pages/pages.index';
 import {HeaderComponent, 
 		NavbarComponent, 
 		LogoComponent,
 		Location,
 		LocationMenu,
-		LocationThumbnailComponent} from './header/header.index';
+		LocationThumbnailComponent, LogoComponent} from './header/header.index';
+import {QuickBookBarComponent} from './pages/homepage/quickbookbar/quick-book-bar.component'
+
+	
+
+//Services for login
+import { ValidateService } from './services/validate.service';
+import { AuthService } from './services/auth.service';
+import { FlashMessagesModule } from 'angular2-flash-messages';
+import { AuthGuard } from './guards/auth.guard';
 
 
 import {appRoutes} from './routes';
@@ -40,19 +56,32 @@ import {appRoutes} from './routes';
 	HeaderComponent,
 	NavbarComponent,
 	LogoComponent,
+<<<<<<< HEAD
 	Location,
 	LocationMenu,
 	LocationThumbnailComponent,
+=======
+	QuickBookBarComponent,
+	AmenityBoxComponent,
+>>>>>>> 84c20463980cbb8e6bf9f700e0b9c3cc19aefe37
 	FilmRowsComponent,
 	BookingPageComponent,
 	BookSeatsComponent,
+	RegisterComponent,
+	LoginComponent,
+	ProfileComponent,
+	DashboardComponent
+
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    NgxSiemaModule.forRoot()
+    NgxSiemaModule.forRoot(),
+    FormsModule,
+    HttpModule,
+    FlashMessagesModule
   ],
-  providers: [],
+  providers: [ValidateService, AuthService, AuthGuard],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
