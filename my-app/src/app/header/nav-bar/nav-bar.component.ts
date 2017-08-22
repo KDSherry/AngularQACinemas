@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { LocationMenu } from '../location/location-menu.component';
+import { Component } from '@angular/core';
+import { Location } from '../location/location.component';
 
 @Component({
 	selector : 'nav-bar',
@@ -7,13 +7,4 @@ import { LocationMenu } from '../location/location-menu.component';
 
 })
 
-export class NavbarComponent{
-	
-	showMenu: boolean = false;
-	
-	toggleMenu(): void {
-		console.log(this.showMenu);
-		this.showMenu = !this.showMenu;
-		console.log(this.showMenu);
-	}
-}
+export class NavbarComponent{}

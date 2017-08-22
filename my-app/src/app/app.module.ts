@@ -18,6 +18,7 @@ import {HomepageComponent,
 import {HeaderComponent, 
 		NavbarComponent, 
 		LogoComponent,
+		Location,
 		LocationMenu,
 		LocationThumbnailComponent} from './header/header.index';
 
@@ -39,6 +40,7 @@ import {appRoutes} from './routes';
 	HeaderComponent,
 	NavbarComponent,
 	LogoComponent,
+	Location,
 	LocationMenu,
 	LocationThumbnailComponent,
 	FilmRowsComponent,

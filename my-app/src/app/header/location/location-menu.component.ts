@@ -12,7 +12,6 @@ export class LocationMenu{
     ngOnInit(){
         this.locations = allLocations;
     }
-    
 }
 
 const allLocations = [
