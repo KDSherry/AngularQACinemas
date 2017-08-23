@@ -1,11 +1,22 @@
 
 
-<div align="center" >
-  <header ></header>
-<flash-messages></flash-messages>
-  <router-outlet></router-outlet>
+<div align="center" class='mdl-layout mdl-js-layout  mdl-layout--fixed-header mdl-layout--no-desktop-drawer-button'>
+
+	<header class='mdl-layout__header mdl-color--primary'></header>
+	
+	<nav-drawer class="mdl-layout__drawer "> </nav-drawer>
+			
+			
+	<main class="mdl-layout__content">
+	
+		<flash-messages></flash-messages>
+		
+		<router-outlet></router-outlet>
   
-  <quickbookbar></quickbookbar>
+		<quickbookbar></quickbookbar>
+		
+	</main>	
+	
 </div>
 
 

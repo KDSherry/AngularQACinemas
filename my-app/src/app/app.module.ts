@@ -28,7 +28,8 @@ import {HeaderComponent,
 		LogoComponent,
 		Location,
 		LocationMenu,
-		LocationThumbnailComponent} from './header/header.index';
+		LocationThumbnailComponent,
+		NavDrawerComponent} from './header/header.index';
 import {QuickBookBarComponent} from './pages/homepage/quickbookbar/quick-book-bar.component'
 
 	
@@ -68,7 +69,8 @@ import {appRoutes} from './routes';
 	RegisterComponent,
 	LoginComponent,
 	ProfileComponent,
-	DashboardComponent
+	DashboardComponent,
+	NavDrawerComponent
 
   ],
   imports: [

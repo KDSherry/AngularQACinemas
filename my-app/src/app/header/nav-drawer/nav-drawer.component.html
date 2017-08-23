@@ -1,0 +1,19 @@
+
+<span class="mdl-layout__title">QA Cinemas</span>
+
+<nav class='mdl-navigation'>
+
+<a class = ' mdl-navigation__link' [routerLink]= "['/home']">Home</a>
+<a class = 'mdl-navigation__link' [routerLink] = "['/about']">About</a>
+<a class = 'mdl-navigation__link' [routerLink] = "['/films']">Films</a>
+<a class = 'mdl-navigation__link' [routerLink] = "['/classifications']">Classifications</a>
+
+
+
+<a *ngIf="authService.loggedIn()" class = 'mdl-navigation__link' [routerLink] = "['/dashboard']">Dashboard</a>
+<a *ngIf="authService.loggedIn()" class = 'mdl-navigation__link' [routerLink] = "['/profile']">Profile</a>
+<a *ngIf="!authService.loggedIn()" class = 'mdl-navigation__link' [routerLink] = "['/login']">Login</a>
+<a *ngIf="!authService.loggedIn()" class = 'mdl-navigation__link' [routerLink] = "['/register']">Register</a>
+<a *ngIf="authService.loggedIn()" (click)="onLogoutClick()" href="#" class = 'mdl-navigation__link'>Logout</a>
+
+</nav>

@@ -4,3 +4,4 @@ export * from './header.component';
 export * from './location/location.component';
 export * from './location/location-menu.component';
 export * from './location/location-thumbnail.component';
+export * from './nav-drawer/nav-drawer.component';

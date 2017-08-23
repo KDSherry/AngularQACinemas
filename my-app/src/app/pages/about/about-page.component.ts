@@ -14,9 +14,9 @@ export class AboutPageComponent implements OnInit{
 	/*pass the selected location in here*/
 	constructor(){
         this.locations = cinemas;
-        console.log(this.locations);
+       /* console.log(this.locations);*/
 		this.location = this.locations[0];
-		console.log(this.location);
+		/*console.log(this.location);*/
 		
     }
 	ngOnInit(){
