@@ -16,8 +16,8 @@ import { IShowing } from './showing';
 export class CinemaStore {
 
     //set URLs for getting data, currently set to json, change to API address for mongo
-    private _moviesURL = './assets/moviedetails.json';
-    private _showingsURL = './assets/showingtimes.json';
+    private _moviesURL = 'http://localhost:3010/api/movies';
+    private _showingsURL = 'http://localhost:3010/api/showings';
 
     errorMessage: string; 
 
@@ -165,6 +165,7 @@ export class CinemaStore {
     }
 
     //temp hardcoded data for testing purposes
+    /*
     populateMovies():IMovie[]{
         return [
             {
@@ -224,7 +225,7 @@ export class CinemaStore {
                 }
 
         ];
-    }
+    } */
 
     //handle actions function similar to how we used flux in react.
     //this should be called from the cinema-actions service, after it has an action sent to it.

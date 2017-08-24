@@ -24,6 +24,7 @@ const app = express();
 
 //ROUTES FOLDER
 const users = require('./routes/users');
+const routes = require('./routes/api');
 
 //---Middleware---
 //CORS middlware
@@ -40,6 +41,7 @@ require('./config/passport')(passport);
 
 //Routes defined in routes folder, at /users/xxx
 app.use('/users', users);
+app.use('/api', routes);
 //----------------------------
 
 // Index page route!
