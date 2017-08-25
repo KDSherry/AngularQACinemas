@@ -163,16 +163,40 @@ export class CinemaStore {
     getShowings():Observable<IShowing[]>{
         return this.showingSubject;
     }
-	/* getShowingsById(id : string) : Observable <IShowing[]>{
-		console.log(this.showingSubject[0]);
+	getShowingsByMovieId(id : string) : any{
+		
 		var showings = [];
-		this.showingSubject.forEach(showing => {
-			if(showing.movieID===id){
+		this.fluxShowings.forEach(showing => {
+			console.log('Showings '+ showing);
+			if(showing.movieID === id){
 				showings.push(showing);
 			}
 		})
 		return showings;
-	} */
+	}
+	getShowingById(id : string) : any{
+		
+		var showingT;
+		this.fluxShowings.forEach(showing => {
+			console.log('Showings '+ showing);
+			if(showing.id === id){
+				showingT = showing;
+			}
+		})
+		return showingT;
+	}
+	
+	getMovieById(id : number): any{
+		var film;
+		this.fluxMovies.forEach((movie) => {
+			if (movie.id === id){
+				film = movie
+			}
+		});
+		return film;
+	}
+
+	
 
     //temp hardcoded data for testing purposes
     /*
