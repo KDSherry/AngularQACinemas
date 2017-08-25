@@ -1,5 +1,5 @@
-<html lang="en">
-	<head>
+
+	<!-- <head>
 		<link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
 		<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,500,400italic,700,700italic' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="http://storage.googleapis.com/code.getmdl.io/1.0.1/material.teal-red.min.css" />
@@ -11,25 +11,17 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="icon" type="image/x-icon" href="favicon.png">
-	</head>
-	<body>
+	</head> -->
+
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+	<h3>Select Seats : {{numberofSeats}}</h3>
+	<main class="mdl-layout__content">
+		<div class="page-content">
+			<div class="mdl-grid">
 
-  <main class="mdl-layout__content">
-    <div class="page-content">
-<div class="mdl-grid">
-
-  <div class="mdl-cell mdl-cell--2-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
-  
-  
-    
-	<br />
-
-	
-
-</div>
-  <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone" style="overflow:auto;">
-		<table>
+				
+				<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone" style="overflow:auto;">
+					<table>
 			<tr>
 				<th></th>
 				<th>1</th>
@@ -50,155 +42,147 @@
 			</tr>
 			<tr>
 				<td>A</td>
-				<td class="table-cell-available" id="A1" onclick="if(this.classList.contains('table-cell-available'))]
-																			{
-																				this.className='table-cell-selected';
-																				document.getElementById('A1icon').className='material-icons md-light';
-																			}
-																			else{
-																				this.className='table-cell-available';
-																				document.getElementById('A1icon').className='material-icons md-dark'
-																				}"><i class="material-icons md-dark"id ="A1icon">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" id="A1" (click)="selectSeat('A1')"><i class="material-icons md-light"id ="A1icon" [style.color]="iconColor">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('A2')" [style.color]="iconColor"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('A3')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('A4')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('A5')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('A6')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('A7')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('A8')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('A9')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('A10')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('A11')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('A12')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('A13')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('A14')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('A15')"><i class="material-icons md-dark">event_seat</i></td>
 			</tr>
 			<tr>
 				<td>B</td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('B1')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('B2')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('B3')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('B4')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('B5')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('B6')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('B7')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('B8')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('B9')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('B10')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('B11')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('B12')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('B13')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('B14')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('B15')"><i class="material-icons md-dark">event_seat</i></td>
 			</tr>
 			<tr>
 				<td>C</td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available"(click)="selectSeat('C1')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('C2')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('C3')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available "(click)="selectSeat('C4')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('C5')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('C6')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('C7')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('C8')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('C9')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('C10')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('C11')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('C12')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('C13')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('C14')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('C15')"><i class="material-icons md-dark">event_seat</i></td>
 			</tr>
 			<tr>
 				<td>D</td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('D1')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('D2')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('D3')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('D4')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('D5')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('D6')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('D7')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('D8')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('D9')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('D10')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('D11')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('D12')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('D13')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('D14')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('D15')"><i class="material-icons md-dark">event_seat</i></td>
 			</tr>
 			<tr>
 				<td>E</td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('E1')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('E2')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('E3')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('E4')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('E5')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('E6')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('E7')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('E8')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('E9')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('E10')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('E11')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('E12')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('E13')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('E14')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('E15')"><i class="material-icons md-dark">event_seat</i></td>
 			</tr>
 			<tr>
 				<td>F</td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('F1')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('F2')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('F3')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('F4')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('F5')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('F6')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('F7')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('F8')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('F9')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('F10')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('F11')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('F12')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('F13')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('F14')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('F15')"><i class="material-icons md-dark">event_seat</i></td>
 			</tr>
 			<tr>
 				<td>G</td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('G1')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('G2')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('G3')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('G4')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('G5')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('G6')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('G7')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('G8')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('G9')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('G10')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('G11')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('G12')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('G13')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('G14')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('G15')"><i class="material-icons md-dark">event_seat</i></td>
 			</tr>
 			<tr>
 				<td>H</td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
-				<td class="table-cell-available"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('H1')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('H2')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('H3')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('H4')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('H5')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('H6')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('H7')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('H8')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('H9')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('H10')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('H11')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('H12')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('H13')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('H14')"><i class="material-icons md-dark">event_seat</i></td>
+				<td class="table-cell-available" (click)="selectSeat('H15')"><i class="material-icons md-dark">event_seat</i></td>
 			</tr>
 			
 		</table>
@@ -207,5 +191,3 @@
 	</div>
   </main>
 </div>
-	</body>
-</html>

@@ -1,61 +1,118 @@
-<div class = '' >
+<div>
 	<div >
-		<h2>Your Showing</h2>
-		<hr/>
-		<section class='section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp'  style ='box-shadow: 5px 5px 20px black; display: inline-flex '>
-			<div  style='margin: 20px;' >
-				<img [src]="['assets/images/'+filminfo.image]" [alt]="filminfo.name" style="max-width: 400px">
-			</div>
-			<div class=''  style='margin: 20px;' >
-				<h3 align = 'right'>
-					{{filminfo.name}}
-				</h3>
-				<h3 align= 'right'>
-					{{showtime.showingTime}}
-				</h3>
-				<h3 align= 'right'>
-					{{showtime.showingDate}}
-				</h3>
-				<h3 align= 'right'>
-					{{showtime.screenType}}
-				</h3>
-
+		<div>
+			<section class='section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp'  style ='box-shadow: 5px 5px 20px black; display: inline-flex '>
+				<div  style='margin: 20px;' >
+					<img [src]="['assets/images/'+filminfo.image]" [alt]="filminfo.name" style="max-width: 200px">
+				</div>
+			
+			
+				<div class=''  style='margin: 20px;' >
+					<h4 style='font-style: italic;'>
+						Your showing
+					</h4 >
+					<hr/>
+					<table class = "mdl-data-table mdl-js-data-table">
+						<tr class = 'tablerow'>
+							<td class = 'tablehead'>
+								Film
+							</td>
+							<td>
+								<div align = 'right'>
+									{{filminfo.name}}
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class = 'tablehead'>
+								Time
+							</td>
+							<td >
+								<div align= 'right'>
+									{{showtime.showingTime}}
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class = 'tablehead'>
+								Date
+							</td>
+							<td>
+								<div align= 'right'>
+									{{showtime.showingDate}}
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class = 'tablehead'>
+								Screen
+							</td>
+							<td>
+								<div align= 'right'>
+									{{showtime.screenType}}
+								</div>
+							</td>
+						</tr>
+					</table>
 				
-			</div>
-		</section>
-		<div >
-		  <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" (click) = 'removeAdult()'>
-				<i class="material-icons">remove
-				</i>
-		  </button>
-		  <div class="mdl-textfield mdl-js-textfield">
+				</div>
+			</section>
+		
+			<hr/>
+		
+			<div>
+			<h3>Tickets</h3>
+			<section  class='section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp'  style ="margin: 20px; align: center; display inline-flex" >
+		
+				<div class="mdl-cell">
+					<div>
+						Adult Tickets
+					</div>
+					<div>
+						(£7.50)
+					</div>
+					<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" (click) = 'removeAdult()'>
+						<i class="material-icons">
+							remove
+						</i>
+					</button>
+					<div class="mdl-textfield mdl-js-textfield">
 
-			<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
-			<label class="mdl-textfield__label" for="sample2">Adults : {{adultTicket}}</label>
-			<span class="mdl-textfield__error">Input is not a number!</span>
+						<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+						<label class="mdl-textfield__label" for="sample2">Adults : {{adultTicket}}</label>
+						<span class="mdl-textfield__error">Input is not a number!</span>
 
-		  </div>
-			<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" (click)= "addAdult()">
-				<i class="material-icons">add</i>
-			</button>
+					</div>
+					<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" (click)= "addAdult()">
+						<i class="material-icons">add</i>
+					</button>
+				</div>
+				<div class="mdl-cell ">
+					<div>
+						Child Tickets
+					</div>
+					<div>
+						(£5.00)
+					</div>
+					<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" (click)="removeChild()">
+						<i class="material-icons">remove</i>
+					</button>
+					<div class="mdl-textfield mdl-js-textfield">
+
+						<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+						<label class="mdl-textfield__label" for="sample2">Children : {{childTicket}}</label>
+						<span class="mdl-textfield__error">Input is not a number!</span>
+
+					</div>
+					<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" (click)="addChild()">
+						<i class="material-icons">add</i>
+					</button>
+				</div>
+			</section>
 		</div>
-	<br />
-	<div>
-		  <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" (click)="removeChild()">
-		  <i class="material-icons">remove</i>
-		</button>
-		  <div class="mdl-textfield mdl-js-textfield">
-
-			<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
-			<label class="mdl-textfield__label" for="sample2">Children : {{childTicket}}</label>
-			<span class="mdl-textfield__error">Input is not a number!</span>
-
-		  </div>
-			<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" (click)="addChild()">
-		  <i class="material-icons">add</i>
-		</button>
+		<hr/>
+		</div>
 	</div>
-	</div>
-	<book-seats>
+	<book-seats *ngIf = "totalTicket>0" [numberofSeats]='totalTicket'[availableSeats]= 'showtime.seatsAvailable' [showTimeId]= 'showtime.Id'>
 	</book-seats>
 </div>

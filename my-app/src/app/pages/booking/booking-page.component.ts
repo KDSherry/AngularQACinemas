@@ -4,7 +4,10 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
 	
-	templateUrl : './booking-page.component.html'
+	templateUrl : './booking-page.component.html',
+	styles : [`
+	.tablehead{color : blue;text-align : left;};
+	.tablerow{border-bottom : 30px grey solid; }`]
 	
 })
 
@@ -14,6 +17,7 @@ export class BookingPageComponent{
 	adultTicket : number = 0;
 	childTicket : number = 0;
 	totalTicket : number = 0;
+	seatsRemaining : number = 0;
 	
 	constructor(private route : ActivatedRoute){
 		
@@ -32,23 +36,25 @@ export class BookingPageComponent{
 			}
 		})
 		
+		//this.seatsRemaining = this.showtime.seatsAvailable.length;
+		
 		
 	}
 	removeAdult(){
 		if (this.adultTicket>0){
 			this.adultTicket= this.adultTicket-1;
 			this.totalTicket= this.totalTicket -1;
-			this.showtime.seatsRemaining+=1;
-			console.log(this.adultTicket,this.childTicket, this.totalTicket, this.showtime.seatsRemaining);
+			this.seatsRemaining+=1;
+			console.log(this.adultTicket,this.childTicket, this.totalTicket, this.seatsRemaining);
 			
 		}
 	}
 	addAdult(){
-		if (this.showtime.seatsRemaining!==0){
+		if (this.seatsRemaining!==0){
 			this.adultTicket+=1;
 			this.totalTicket+=1;
-			this.showtime.seatsRemaining-=1;
-						console.log(this.adultTicket,this.childTicket, this.totalTicket, this.showtime.seatsRemaining);
+			this.seatsRemaining-=1;
+			console.log(this.adultTicket,this.childTicket, this.totalTicket, this.seatsRemaining);
 		}
 		
 	}
@@ -56,17 +62,17 @@ export class BookingPageComponent{
 		if (this.childTicket>0){
 			this.childTicket= this.childTicket-1;
 			this.totalTicket= this.totalTicket -1;
-			this.showtime.seatsRemaining+=1;
-						console.log(this.adultTicket,this.childTicket, this.totalTicket, this.showtime.seatsRemaining);
+			this.seatsRemaining+=1;
+						console.log(this.adultTicket,this.childTicket, this.totalTicket, this.seatsRemaining);
 		}
 		
 	}
 	addChild(){
-		if (this.showtime.seatsRemaining!==0){
+		if (this.seatsRemaining!==0){
 			this.childTicket+=1;
 			this.totalTicket+=1;
-			this.showtime.seatsRemaining-=1;
-						console.log(this.adultTicket,this.childTicket, this.totalTicket, this.showtime.seatsRemaining);
+			this.seatsRemaining-=1;
+						console.log(this.adultTicket,this.childTicket, this.totalTicket, this.seatsRemaining);
 		}
 		
 	}
@@ -250,7 +256,15 @@ const showingTimes = [
 						"showingTime" : "13:00",
 						"showingDate" : "04/09/2017",
 						"screenType" : "2D",
-						"seatsRemaining" :120
+						"seatsRemaining" :120,
+						/* "seatsAvailable" : ['A1','A2','A3','A4','A5','A6','A7','A8','A9','A10','A11','A12','A13','A14','A15',
+						'B1','B2','B3','B4','B5','B6','B7','B8','B9','B10','B11','B12','B13','B14','B15',
+						'C1','C2','C3','C4','C5','C6','C7','C8','C9','C10','C11','C12','C13','C14','C15',
+						'D1','D2','D3','D4','D5','D6','D7','D8','D9','D10','D11','D12','D13','D14','D15',
+						'E1','E2','E3','E4','E5','E6','E7','E8','E9','E10','E11','E12','E13','E14','E15',
+						'F1','F2','F3','F4','F5','F6','F7','F8','F9','F10','F11','F12','F13','F14','F15',
+						'G1','G2','G3','G4','G5','G6','G7','G8','G9','G10','G11','G12','G13','G14','G15',
+						'H1','H2','H3','H4','H5','H6','H7','H8','H9','H10','H11','H12','H13','H14','H15'] */
 					 },
 					 {
 						 "id" : "1",
@@ -259,7 +273,8 @@ const showingTimes = [
 						"showingTime" : "15:00",
 						"showingDate" : "09/09/2017",
 						"screenType" : "2D",
-						"seatsRemaining" :120
+						"seatsRemaining" :120,
+						
 					 },
 					 {
 						"id" : "2",
@@ -294,7 +309,7 @@ const showingTimes = [
 						"movieID" : "5",
 						"cinemaID" : "0",
 						"showingTime" : "17:30",
-						"showingDate" : "09/09/2017",
+						"showingDate" : "05/09/2017",
 						"screenType" : "2D",
 						"seatsRemaining" :120
 					 },
@@ -509,8 +524,8 @@ const showingTimes = [
 						 "id" : "29",
 						"movieID" : "5",
 						"cinemaID" : "2",
-						"showingTime" : "09:20",
-						"showingDate" : "08/09/2017",
+						"showingTime" : "22:20",
+						"showingDate" : "06/09/2017",
 						"screenType" : "2D",
 						"seatsRemaining" :120,
 					 },
@@ -607,6 +622,746 @@ const showingTimes = [
 					 {
 						 "id" : "40",
 						"movieID" : "4",
+						"cinemaID" : "3",
+						"showingTime" : "23:30",
+						"showingDate" : "07/09/2017",
+						"screenType" : "3D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						"id" : "41",
+						"movieID" : "5",
+						"cinemaID" : "0",
+						"showingTime" : "13:00",
+						"showingDate" : "04/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120
+					 },
+					 {
+						 "id" : "42",
+						"movieID" : "6",
+						"cinemaID" : "0",
+						"showingTime" : "15:00",
+						"showingDate" : "04/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120
+					 },
+					 {
+						"id" : "43",
+						"movieID" : "7",
+						"cinemaID" : "0",
+						"showingTime" : "17:00",
+						"showingDate" : "07/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120
+					 },
+					 {
+						"id" : "44",
+						"movieID" : "8",
+						"cinemaID" : "0",
+						"showingTime" : "19:00",
+						"showingDate" : "06/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120
+						
+					 },
+					 {
+						 "id" : "45",
+						"movieID" : "9",
+						"cinemaID" : "0",
+						"showingTime" : "13:30",
+						"showingDate" : "08/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120
+					 },
+					 {
+						 "id" : "46",
+						"movieID" : "10",
+						"cinemaID" : "0",
+						"showingTime" : "17:30",
+						"showingDate" : "09/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120
+					 },
+					 {
+						 "id" : "47",
+						"movieID" : "11",
+						"cinemaID" : "0",
+						"showingTime" : "21:30",
+						"showingDate" : "10/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120
+					 },
+					{
+						"id" : "48",
+						"movieID" : "0",
+						"cinemaID" : "0",
+						"showingTime" : "14:00",
+						"showingDate" : "04/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120
+					 },
+					 {
+						 "id" : "49",
+						"movieID" : "1",
+						"cinemaID" : "0",
+						"showingTime" : "16:00",
+						"showingDate" : "05/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "50",
+						"movieID" : "2",
+						"cinemaID" : "0",
+						"showingTime" : "18:00",
+						"showingDate" : "06/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "52",
+						"movieID" : "3",
+						"cinemaID" : "0",
+						"showingTime" : "20:00",
+						"showingDate" : "08/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						"id" : "53",
+					 	"movieID" : "4",
+						"cinemaID" : "0",
+						"showingTime" : "16:15",
+						"showingDate" : "09/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "54",
+					 	"movieID" : "5",
+						"cinemaID" : "0",
+						"showingTime" : "16:45",
+						"showingDate" : "10/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "55",
+					 	"movieID" : "6",
+						"cinemaID" : "0",
+						"showingTime" : "17:15",
+						"showingDate" : "06/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },					 
+					 {
+						 "id" : "56",
+						"movieID" : "7",
+						"cinemaID" : "1",
+						"showingTime" : "13:00",
+						"showingDate" : "05/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "57",
+						"movieID" : "8",
+						"cinemaID" : "1",
+						"showingTime" : "15:00",
+						"showingDate" : "07/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "58",
+						"movieID" : "9",
+						"cinemaID" : "1",
+						"showingTime" : "17:00",
+						"showingDate" : "04/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					  {
+						  "id" : "59",
+						"movieID" : "10",
+						"cinemaID" : "1",
+						"showingTime" : "19:00",
+						"showingDate" : "07/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "60",
+						"movieID" : "11",
+						"cinemaID" : "1",
+						"showingTime" : "13:30",
+						"showingDate" : "09/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "61",
+						"movieID" : "0",
+						"cinemaID" : "1",
+						"showingTime" : "17:30",
+						"showingDate" : "09/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "62",
+						"movieID" : "1",
+						"cinemaID" : "1",
+						"showingTime" : "21:30",
+						"showingDate" : "09/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "63",
+						"movieID" : "2",
+						"cinemaID" : "1",
+						"showingTime" : "14:00",
+						"showingDate" : "09/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "64",
+						"movieID" : "3",
+						"cinemaID" : "1",
+						"showingTime" : "16:00",
+						"showingDate" : "09/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "65",
+						"movieID" : "4",
+						"cinemaID" : "1",
+						"showingTime" : "18:00",
+						"showingDate" : "09/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "66",
+						"movieID" : "5",
+						"cinemaID" : "1",
+						"showingTime" : "20:00",
+						"showingDate" : "09/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "67",
+					 	"movieID" : "6",
+						"cinemaID" : "1",
+						"showingTime" : "16:15",
+						"showingDate" : "06/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "68",
+					 	"movieID" : "7",
+						"cinemaID" : "1",
+						"showingTime" : "16:45",
+						"showingDate" : "05/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "69",
+					 	"movieID" : "8",
+						"cinemaID" : "1",
+						"showingTime" : "17:15",
+						"showingDate" : "04/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "70",
+						"movieID" : "9",
+						"cinemaID" : "2",
+						"showingTime" : "09:00",
+						"showingDate" : "10/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "71",
+						"movieID" : "10",
+						"cinemaID" : "2",
+						"showingTime" : "09:20",
+						"showingDate" : "08/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "72",
+						"movieID" : "11",
+						"cinemaID" : "2",
+						"showingTime" : "09:40",
+						"showingDate" : "07/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "73",
+						"movieID" : "0",
+						"cinemaID" : "2",
+						"showingTime" : "10:00",
+						"showingDate" : "08/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "74",
+						"movieID" : "1",
+						"cinemaID" : "2",
+						"showingTime" : "10:20",
+						"showingDate" : "10/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "75",
+						"movieID" : "2",
+						"cinemaID" : "2",
+						"showingTime" : "10:40",
+						"showingDate" : "05/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "76",
+						"movieID" : "3",
+						"cinemaID" : "2",
+						"showingTime" : "11:00",
+						"showingDate" : "07/09/2017",
+						"screenType" : "3D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "77",
+						"movieID" : "4",
+						"cinemaID" : "2",
+						"showingTime" : "11:20",
+						"showingDate" : "04/09/2017",
+						"screenType" : "3D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "78",
+						"movieID" : "5",
+						"cinemaID" : "3",
+						"showingTime" : "22:30",
+						"showingDate" : "08/09/2017",
+						"screenType" : "3D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "79",
+						"movieID" : "6",
+						"cinemaID" : "3",
+						"showingTime" : "22:45",
+						"showingDate" : "08/09/2017",
+						"screenType" : "3D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "80",
+						"movieID" : "7",
+						"cinemaID" : "3",
+						"showingTime" : "23:00",
+						"showingDate" : "06/09/2017",
+						"screenType" : "3D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "81",
+						"movieID" : "8",
+						"cinemaID" : "3",
+						"showingTime" : "23:15",
+						"showingDate" : "04/09/2017",
+						"screenType" : "3D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "82",
+						"movieID" : "9",
+						"cinemaID" : "3",
+						"showingTime" : "23:30",
+						"showingDate" : "07/09/2017",
+						"screenType" : "3D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						"id" : "83",
+						"movieID" : "10",
+						"cinemaID" : "0",
+						"showingTime" : "13:00",
+						"showingDate" : "04/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120
+					 },
+					 {
+						 "id" : "84",
+						"movieID" : "11",
+						"cinemaID" : "0",
+						"showingTime" : "15:00",
+						"showingDate" : "09/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120
+					 },
+					 {
+						"id" : "85",
+						"movieID" : "0",
+						"cinemaID" : "0",
+						"showingTime" : "17:00",
+						"showingDate" : "07/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120
+					 },
+					 {
+						"id" : "86",
+						"movieID" : "1",
+						"cinemaID" : "0",
+						"showingTime" : "19:00",
+						"showingDate" : "06/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120
+						
+					 },
+					 {
+						 "id" : "87",
+						"movieID" : "2",
+						"cinemaID" : "0",
+						"showingTime" : "13:30",
+						"showingDate" : "08/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120
+					 },
+					 {
+						 "id" : "88",
+						"movieID" : "3",
+						"cinemaID" : "0",
+						"showingTime" : "17:30",
+						"showingDate" : "09/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120
+					 },
+					 {
+						 "id" : "89",
+						"movieID" : "4",
+						"cinemaID" : "0",
+						"showingTime" : "21:30",
+						"showingDate" : "06/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120
+					 },
+					{
+						"id" : "90",
+						"movieID" : "5",
+						"cinemaID" : "0",
+						"showingTime" : "14:00",
+						"showingDate" : "04/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120
+					 },
+					 {
+						 "id" : "91",
+						"movieID" : "6",
+						"cinemaID" : "0",
+						"showingTime" : "16:00",
+						"showingDate" : "05/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "92",
+						"movieID" : "7",
+						"cinemaID" : "0",
+						"showingTime" : "18:00",
+						"showingDate" : "06/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "93",
+						"movieID" : "8",
+						"cinemaID" : "0",
+						"showingTime" : "20:00",
+						"showingDate" : "08/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						"id" : "94",
+					 	"movieID" : "9",
+						"cinemaID" : "0",
+						"showingTime" : "16:15",
+						"showingDate" : "09/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "95",
+					 	"movieID" : "10",
+						"cinemaID" : "0",
+						"showingTime" : "16:45",
+						"showingDate" : "10/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "96",
+					 	"movieID" : "11",
+						"cinemaID" : "0",
+						"showingTime" : "17:15",
+						"showingDate" : "06/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },					 
+					 {
+						 "id" : "97",
+						"movieID" : "0",
+						"cinemaID" : "1",
+						"showingTime" : "13:00",
+						"showingDate" : "05/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "98",
+						"movieID" : "1",
+						"cinemaID" : "1",
+						"showingTime" : "15:00",
+						"showingDate" : "07/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "99",
+						"movieID" : "2",
+						"cinemaID" : "1",
+						"showingTime" : "17:00",
+						"showingDate" : "04/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					  {
+						  "id" : "100",
+						"movieID" : "3",
+						"cinemaID" : "1",
+						"showingTime" : "19:00",
+						"showingDate" : "10/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "101",
+						"movieID" : "4",
+						"cinemaID" : "1",
+						"showingTime" : "13:30",
+						"showingDate" : "05/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "102",
+						"movieID" : "5",
+						"cinemaID" : "1",
+						"showingTime" : "17:30",
+						"showingDate" : "09/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "103",
+						"movieID" : "6",
+						"cinemaID" : "1",
+						"showingTime" : "21:30",
+						"showingDate" : "09/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "104",
+						"movieID" : "7",
+						"cinemaID" : "1",
+						"showingTime" : "14:00",
+						"showingDate" : "09/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "105",
+						"movieID" : "8",
+						"cinemaID" : "1",
+						"showingTime" : "16:00",
+						"showingDate" : "09/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "106",
+						"movieID" : "9",
+						"cinemaID" : "1",
+						"showingTime" : "18:00",
+						"showingDate" : "09/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "107",
+						"movieID" : "10",
+						"cinemaID" : "1",
+						"showingTime" : "20:00",
+						"showingDate" : "09/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "108",
+					 	"movieID" : "11",
+						"cinemaID" : "1",
+						"showingTime" : "16:15",
+						"showingDate" : "06/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "109",
+					 	"movieID" : "0",
+						"cinemaID" : "1",
+						"showingTime" : "16:45",
+						"showingDate" : "05/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "110",
+					 	"movieID" : "1",
+						"cinemaID" : "1",
+						"showingTime" : "17:15",
+						"showingDate" : "04/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "111",
+						"movieID" : "2",
+						"cinemaID" : "2",
+						"showingTime" : "09:00",
+						"showingDate" : "10/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "112",
+						"movieID" : "3",
+						"cinemaID" : "2",
+						"showingTime" : "09:20",
+						"showingDate" : "05/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "113",
+						"movieID" : "4",
+						"cinemaID" : "2",
+						"showingTime" : "09:40",
+						"showingDate" : "07/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "114",
+						"movieID" : "5",
+						"cinemaID" : "2",
+						"showingTime" : "10:00",
+						"showingDate" : "08/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "115",
+						"movieID" : "6",
+						"cinemaID" : "2",
+						"showingTime" : "10:20",
+						"showingDate" : "10/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "116",
+						"movieID" : "7",
+						"cinemaID" : "2",
+						"showingTime" : "10:40",
+						"showingDate" : "05/09/2017",
+						"screenType" : "2D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "117",
+						"movieID" : "8",
+						"cinemaID" : "2",
+						"showingTime" : "11:00",
+						"showingDate" : "07/09/2017",
+						"screenType" : "3D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "118",
+						"movieID" : "9",
+						"cinemaID" : "2",
+						"showingTime" : "11:20",
+						"showingDate" : "04/09/2017",
+						"screenType" : "3D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "119",
+						"movieID" : "10",
+						"cinemaID" : "3",
+						"showingTime" : "22:30",
+						"showingDate" : "08/09/2017",
+						"screenType" : "3D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "120",
+						"movieID" : "11",
+						"cinemaID" : "3",
+						"showingTime" : "22:45",
+						"showingDate" : "09/09/2017",
+						"screenType" : "3D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "121",
+						"movieID" : "0",
+						"cinemaID" : "3",
+						"showingTime" : "23:00",
+						"showingDate" : "06/09/2017",
+						"screenType" : "3D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "122",
+						"movieID" : "1",
+						"cinemaID" : "3",
+						"showingTime" : "23:15",
+						"showingDate" : "04/09/2017",
+						"screenType" : "3D",
+						"seatsRemaining" :120,
+					 },
+					 {
+						 "id" : "123",
+						"movieID" : "2",
 						"cinemaID" : "3",
 						"showingTime" : "23:30",
 						"showingDate" : "07/09/2017",

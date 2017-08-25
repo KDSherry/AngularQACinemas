@@ -163,6 +163,16 @@ export class CinemaStore {
     getShowings():Observable<IShowing[]>{
         return this.showingSubject;
     }
+	/* getShowingsById(id : string) : Observable <IShowing[]>{
+		console.log(this.showingSubject[0]);
+		var showings = [];
+		this.showingSubject.forEach(showing => {
+			if(showing.movieID===id){
+				showings.push(showing);
+			}
+		})
+		return showings;
+	} */
 
     //temp hardcoded data for testing purposes
     /*
