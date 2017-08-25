@@ -1,6 +1,6 @@
 import {Routes} from '@angular/router';
 import {HomepageComponent, AboutPageComponent, FilmsPageComponent, FilmDetailsComponent, ClassificationsPageComponent,
-RegisterComponent, LoginComponent, DashboardComponent, ProfileComponent,BookingPageComponent } from './pages/pages.index';
+RegisterComponent, LoginComponent, DashboardComponent, ProfileComponent,BookingPageComponent,ConfirmationPageComponent } from './pages/pages.index';
 import { AuthGuard } from './guards/auth.guard';
 
 
@@ -13,6 +13,7 @@ export const appRoutes : Routes = [
 	{path : 'classifications', component : ClassificationsPageComponent},
 	{path : 'films/:id', component : FilmDetailsComponent},
 	{path : 'booking/:id', component : BookingPageComponent},
+	{ path : 'confirmation/:id', component : ConfirmationPageComponent},
 	{ path: 'register', component: RegisterComponent },
     { path: 'login', component: LoginComponent },
     { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},

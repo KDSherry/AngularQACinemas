@@ -4,6 +4,7 @@ import { CinemaStore } from "../../flux/cinema-store.service";
 import { IMovie } from "../../flux/movie";
 import { CinemaActions } from "../../flux/cinema-actions.service";
 import { Observable } from 'rxjs/Observable';
+import {Router} from '@angular/router';
 
 @Component({
 	
@@ -22,7 +23,7 @@ export class BookingPageComponent{
 	totalTicket : number = 0;
 	seatsRemaining : number = 0;
 	
-	constructor(private route : ActivatedRoute, private cinemaStore : CinemaStore){
+	constructor(private route : ActivatedRoute, private cinemaStore : CinemaStore, private router : Router){
 		
 	}
 	
@@ -38,6 +39,13 @@ export class BookingPageComponent{
 		
 		
 	}
+	confirm(){
+		
+		this.cinemaStore.bookTickets(this.showtime.id , this.totalTicket);	
+		this.router.navigate(['/confirmation', this.showtime.id]);
+	}
+	
+	
 	removeAdult(){
 		if (this.adultTicket>0){
 			this.adultTicket= this.adultTicket-1;

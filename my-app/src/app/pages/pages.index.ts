@@ -11,6 +11,7 @@ export * from './homepage/quickbookbar/quick-book-bar.component';
 export * from './about/amenity-box.component';
 export * from './booking/booking-page.component';
 export * from './booking/book-seats.component';
+export * from './booking/confirmation-page.component';
 export * from './register/register.component';
 export * from './login/login.component';
 export * from './dashboard/dashboard.component';

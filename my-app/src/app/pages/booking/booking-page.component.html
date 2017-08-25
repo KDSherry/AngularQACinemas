@@ -113,6 +113,11 @@
 		<hr/>
 		</div>
 	</div>
-	<book-seats *ngIf = "totalTicket>0" [numberofSeats]='totalTicket'[availableSeats]= 'showtime.seatsAvailable' [showTimeId]= 'showtime.Id'>
-	</book-seats>
+	<div>
+		<button class = "mdl-button mdl-js-button" (click) = "confirm()">
+			Confirm
+		</button>
+	</div>
+	<!-- <book-seats *ngIf = "totalTicket>0" [numberofSeats]='totalTicket'[availableSeats]= 'showtime.seatsAvailable' [showTimeId]= 'showtime.Id'>
+	</book-seats> -->
 </div>

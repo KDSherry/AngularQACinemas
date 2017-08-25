@@ -22,7 +22,8 @@ import {HomepageComponent,
 		RegisterComponent,
 		LoginComponent,
 		ProfileComponent,
-		DashboardComponent } from './pages/pages.index';
+		DashboardComponent,
+		ConfirmationPageComponent} from './pages/pages.index';
 import {HeaderComponent, 
 		NavbarComponent, 
 		LogoComponent,
@@ -70,7 +71,8 @@ import {appRoutes} from './routes';
 	LoginComponent,
 	ProfileComponent,
 	DashboardComponent,
-	NavDrawerComponent
+	NavDrawerComponent,
+	ConfirmationPageComponent
 
   ],
   imports: [

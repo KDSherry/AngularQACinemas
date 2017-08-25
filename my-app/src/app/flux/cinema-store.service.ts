@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
@@ -76,7 +77,7 @@ export class CinemaStore {
             }]);
 
     
-    constructor(private _http: HttpClient){
+    constructor(private _http: HttpClient, private http : Http){
        this.filteredMovies = [];
 
        //Subscribe to the observable returned from the load data functions (see below)
@@ -194,6 +195,26 @@ export class CinemaStore {
 			}
 		});
 		return film;
+	}
+	
+	bookTickets(id : string, ticket : number){
+		
+		var selectedShowing;
+		this.fluxShowings.forEach(showing =>{
+			if(showing.id === id){
+				selectedShowing = showing;
+			}
+		})
+		
+		selectedShowing.seatsRemaining = selectedShowing.seatsRemaining - ticket;
+		
+		let headers = new Headers({'Content-Type' : 'application/json'});
+		let options = new RequestOptions({headers: headers});
+		
+		this.http.post(this._showingsURL, JSON.stringify(selectedShowing), options).map((response: Response) => {
+			return response.json();
+		}).catch(this.handleError);
+		
 	}
 
 	
