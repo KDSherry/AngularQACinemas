@@ -197,7 +197,7 @@ export class CinemaStore {
 		return film;
 	}
 	
-	bookTickets(id : string, ticket : number){
+	bookTickets(id : string, ticket : number) : Observable<any[]>{
 		
 		var selectedShowing;
 		this.fluxShowings.forEach(showing =>{
@@ -208,12 +208,30 @@ export class CinemaStore {
 		
 		selectedShowing.seatsRemaining = selectedShowing.seatsRemaining - ticket;
 		
-		let headers = new Headers({'Content-Type' : 'application/json'});
+		let _showingsEditURL = 'http://localhost:3010/api/showings/'+id;
+			
+		
+		let showingToUpdate : IShowing = {
+			"id" : selectedShowing.id,
+			"movieID" : selectedShowing.movieID,
+			"cinemaID" : selectedShowing.cinemaID,
+			"showingTime" : selectedShowing.showingTime,
+			"showingDate" : selectedShowing.showingDate,
+			"screenType" : selectedShowing.screenType,
+			"seatsRemaining" : selectedShowing.seatsRemaining
+		};
+		
+		
+		let showingBody = JSON.stringify(showingToUpdate);
+			
+		return this._http.put(_showingsEditURL, showingBody)
+		.catch(this.handleError);
+		/* let headers = new Headers({'Content-Type' : 'application/json'});
 		let options = new RequestOptions({headers: headers});
 		
 		this.http.post(this._showingsURL, JSON.stringify(selectedShowing), options).map((response: Response) => {
 			return response.json();
-		}).catch(this.handleError);
+		}).catch(this.handleError); */
 		
 	}
 

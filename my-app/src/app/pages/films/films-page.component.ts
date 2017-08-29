@@ -8,18 +8,18 @@ import { Observable } from 'rxjs/Observable';
 	
 	template : `
 	<div>
-		<form id="searchForm" (ngSubmit)= "searchFilms(searchTerm)" class="navbar-form navbar-right"  >
+		<form id="searchForm" (ngSubmit)= "searchFilms(searchTerm)" >
 			<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-			<label class="mdl-button mdl-js-button mdl-button--icon" for="sample6" modal-trigger="searchResults" >
-				<i class="material-icons">search</i>
-			</label>
-			<div class="mdl-textfield__expandable-holder">
-				<input [(ngModel)]="searchTerm" name= "searchTerm" type="text" class="mdl-textfield__input" type="text" id="sample6" placeholder="Search Films" >
-				<label class="mdl-textfield__label" for="sample-expandable">Expandable Input</label>
-			</div>
+				<label class="mdl-button mdl-js-button mdl-button--icon" for="sample6" modal-trigger="searchResults" >
+					<i class="material-icons">search</i>
+				</label>
+				<div class="mdl-textfield__expandable-holder">
+					<input [(ngModel)]="searchTerm" name= "searchTerm" type="text" class="mdl-textfield__input" type="text" id="sample6" placeholder="Search Films" >
+					<label class="mdl-textfield__label" for="sample-expandable">Expandable Input</label>
+				</div>
 			</div>
 		</form>
-		<span>
+		<div>
 			<button class="mdl-button mdl-js-button" (click)="findGenre('Comedy')">
 				Comedy
 			</button>
@@ -53,8 +53,8 @@ import { Observable } from 'rxjs/Observable';
 			<button class="mdl-button mdl-js-button" (click)="findGenre('Animation')">
 				Animation
 			</button>
-		</span>
-		<span>
+		</div>
+		<div>
 			<button class="mdl-button mdl-js-button" (click)="findCert('18')">
 				18
 			</button>
@@ -73,7 +73,7 @@ import { Observable } from 'rxjs/Observable';
 			<button class="mdl-button mdl-js-button" (click)="findCert('U')">
 				U
 			</button>
-		</span>
+		</div>
 		
 		<h2>Films</h2>
 		<hr/>

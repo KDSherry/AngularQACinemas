@@ -36,12 +36,13 @@ export class BookingPageComponent{
 		
 		this.filminfo = this.cinemaStore.getMovieById(this.showtime.movieID);
 		this.seatsRemaining = this.showtime.seatsRemaining;
+		console.log(this.seatsRemaining);
 		
 		
 	}
 	confirm(){
 		
-		this.cinemaStore.bookTickets(this.showtime.id , this.totalTicket);	
+		this.cinemaStore.bookTickets(this.showtime.id , this.totalTicket).subscribe();	
 		this.router.navigate(['/confirmation', this.showtime.id]);
 	}
 	
